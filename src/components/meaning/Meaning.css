@@ -1,0 +1,11 @@
+li {
+  list-style-type: none;
+}
+
+.Menaing-partOfSpeech {
+  color: rgb(255, 145, 0);
+}
+
+strong {
+  color: rgb(66, 66, 66);
+}

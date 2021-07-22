@@ -1,29 +1,32 @@
-import React from 'react'
+import './Meaning.css'
 
 const Meaning = ({ partOfSpeech, definitions }) => {
-  console.log(partOfSpeech)
-  console.log(definitions)
 
   return (
-    <div>
-      <h5>{partOfSpeech}</h5>
+    <div className='Meaning'>
+      <h6 className='Menaing-partOfSpeech'><em>{partOfSpeech}</em></h6>
       {definitions.map((definition, i) => {
         console.log(definition)
         return (
           <ul key={i}>
             <li>
-              <strong>Definition:</strong> {definition.definition}
+              <strong>Definition: </strong>{definition.definition}
             </li>
-            <li>
-             <strong>Example:</strong> {definition.example}
-            </li>
-            {definition.synonyms.length
+            {definition.example
               ? <li>
-                  <strong>Synonyms:</strong> {definition.synonyms}
+                  <strong>Example: </strong>"{definition.example}"
                 </li>
               : null
             }
-
+           {definition.synonyms.length
+              ? <li>
+                <strong>Synonyms: </strong>
+                {definition.synonyms.map((synonym, i) => {
+                  return <span key={i}>{synonym}, </span>
+                })}
+                </li>
+              : null
+            }
           </ul>
         )
       })}
