@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './Dictionary.css'
-import Definition from'../definition/Definition'
+import Result from'../result/Result'
 
 const Dictionary = () => {
   const [word, setWord] = useState(''),
-        [data, setData] = useState([]),
+        [data, setData] = useState({}),
         baseUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en-US/'
   
   const displayData = (data) => {
-    setData(data)
+    setData(data[0])
   }
   
   const handleSearch = (e) => {
@@ -23,12 +23,13 @@ const Dictionary = () => {
     setWord(e.target.value)
   }
 
+  console.log(data)
   return (
     <div className='Dictionary'>
       <form onSubmit={handleSearch}>
         <input type='search' autoFocus={true} onChange={handleChange}/>
       </form>
-      <Definition data={data} />
+      <Result data={data} />
     </div>
   )
 }

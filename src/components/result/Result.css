@@ -1,0 +1,7 @@
+.Result {
+  margin: 3vh 0;
+}
+
+.Result-word {
+  text-transform: capitalize;
+}
