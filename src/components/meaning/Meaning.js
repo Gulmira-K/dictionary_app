@@ -1,4 +1,5 @@
 import './Meaning.css'
+import Synonyms from '../synonyms/Synonyms'
 
 const Meaning = ({ partOfSpeech, definitions }) => {
 
@@ -18,15 +19,9 @@ const Meaning = ({ partOfSpeech, definitions }) => {
                 </li>
               : null
             }
-           {definition.synonyms.length
-              ? <li>
-                <strong>Synonyms: </strong>
-                {definition.synonyms.map((synonym, i) => {
-                  return <span key={i}>{synonym}, </span>
-                })}
-                </li>
-              : null
-            }
+            <li>
+              <Synonyms synonyms={definition.synonyms} />
+            </li>
           </ul>
         )
       })}
