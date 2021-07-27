@@ -1,13 +1,16 @@
 import React from 'react'
 
 const Synonyms = ({ synonyms }) => {
-  console.log(!synonyms)
+
   if (!synonyms.length) {
     return null
   } else {
     return (
      <div>
-        <strong>Synonyms: </strong> {synonyms}   
+        <strong>Synonyms: </strong>
+        {synonyms.map((synonym, i) => {
+          return <span key={i}>{synonym}, </span>
+        })}
       </div>
     )
   }

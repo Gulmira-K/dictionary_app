@@ -7,7 +7,6 @@ const Meaning = ({ partOfSpeech, definitions }) => {
     <div className='Meaning'>
       <h6 className='Menaing-partOfSpeech'><em>{partOfSpeech}</em></h6>
       {definitions.map((definition, i) => {
-        console.log(definition)
         return (
           <ul key={i}>
             <li>
