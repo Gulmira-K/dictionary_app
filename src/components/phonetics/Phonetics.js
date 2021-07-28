@@ -1,17 +1,24 @@
-import React from 'react'
+import { useRef } from 'react'
+import './Phonetics.css'
 
 const Phonetics = ({ phonetics }) => {
-
+  const audioPlayer = useRef();
+  
   if (phonetics.length) {
     const text = phonetics[0].text,
-      audio = phonetics[0].oxford_audio
-    console.log(audio)
+          audio = phonetics[0].oxford_audio;   
+
+    const play = () => {
+      audioPlayer.current.play()
+    }
+
     return (
-      <div>
-        <a href={audio}>Listen</a>
-        <p>{text}</p>
+      <div className='phonetics'>
+        <i className="fas fa-volume-up soundIcon" onClick={play}><audio src={audio} ref={audioPlayer}></audio></i>
+        <p className='phoneticsText'>[{text}]</p>
       </div>
     )
+
   } else {
     return null
   }

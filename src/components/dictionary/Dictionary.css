@@ -1,2 +1,8 @@
-.Dictionary {
+.Dictionary form {
+  text-align: center;
+}
+
+.Dictionary form input {
+  outline: none;
+  width: 20vw;
 }

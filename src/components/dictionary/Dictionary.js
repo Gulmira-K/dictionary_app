@@ -27,7 +27,7 @@ const Dictionary = () => {
   return (
     <div className='Dictionary'>
       <form onSubmit={handleSearch}>
-        <input type='search'placeholder='Enter a word...' autoFocus={true} onChange={handleChange}/>
+        <input type='search' placeholder='Enter a word...' autoFocus={true} onChange={handleChange}/>
       </form>
       <Result data={data} />
     </div>

@@ -1,0 +1,22 @@
+.phonetics {
+  display: flex;
+  flex-direction: row;
+  padding: 1vh;
+  align-items: center;
+}
+
+.soundIcon {
+  margin-right: 1vw;
+  cursor: pointer;
+  color: rgb(56, 97, 172);
+  transition: scale 0.3s ease-in-out;
+}
+
+.soundIcon:hover {
+  transform: scale(1.1);
+  color: grey;
+}
+
+.phoneticsText {
+  margin: 0;
+}

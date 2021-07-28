@@ -9,8 +9,9 @@ const Synonyms = ({ synonyms }) => {
      <div>
         <strong>Synonyms: </strong>
         {synonyms.map((synonym, i) => {
-          return <span key={i}>{synonym}, </span>
-        })}
+          return <span key={i}>{synonym}{ i === synonyms.length - 1 ? '' : ', '}</span>
+        })
+        }
       </div>
     )
   }
